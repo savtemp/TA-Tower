@@ -1,0 +1,60 @@
+
+{
+  "folders": [
+    {
+      "path": "TA-Tower.client",
+      "name": "client"
+    },
+    {
+      "path": "TA-Tower",
+      "name": "server"
+    }
+  ],
+  "settings": {
+    "editor.suggestSelection": "first",
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "javascript.referencesCodeLens.enabled": true,
+    "javascript.referencesCodeLens.showOnAllFunctions": true,
+    "typescript.implementationsCodeLens.enabled": true,
+    "typescript.referencesCodeLens.enabled": true,
+    "typescript.referencesCodeLens.showOnAllFunctions": true,
+    "js/ts.implicitProjectConfig.checkJs": true,
+    "files.exclude": {
+      "**/.nyc_*": true,
+      "**/coverage": true,
+      "**/node_modules": true
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "explorer.confirmDragAndDrop": false,
+    "vetur.format.defaultFormatter.js": "vscode-typescript",
+    "eslint.alwaysShowStatus": true,
+    "eslint.format.enable": true,
+    "eslint.lintTask.enable": true,
+    "eslint.codeActionsOnSave.mode": "all",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    },
+    "workbench.colorCustomizations": {
+      "activityBar.activeBackground": "#d39aa9",
+      "activityBar.background": "#d39aa9",
+      "activityBar.foreground": "#15202b",
+      "activityBar.inactiveForeground": "#15202b99",
+      "activityBarBadge.background": "#ecf5e9",
+      "activityBarBadge.foreground": "#15202b",
+      "commandCenter.border": "#15202b99",
+      "sash.hoverBorder": "#d39aa9",
+      "statusBar.background": "#c4768b",
+      "statusBar.foreground": "#15202b",
+      "statusBarItem.hoverBackground": "#b5526d",
+      "statusBarItem.remoteBackground": "#c4768b",
+      "statusBarItem.remoteForeground": "#15202b",
+      "titleBar.activeBackground": "#c4768b",
+      "titleBar.activeForeground": "#15202b",
+      "titleBar.inactiveBackground": "#c4768b99",
+      "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.color": "#c4768b"
+  }
+}
