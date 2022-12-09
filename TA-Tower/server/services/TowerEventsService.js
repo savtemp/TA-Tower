@@ -19,11 +19,15 @@ class TowerEventsService{
     await towerEvent.populate('creator', 'name picture')
     return towerEvent
   }
-  async editEvent(eventId, eventData) {
+  async editEvent(eventId, eventData, userInfo) {
     let towerEvent = await this.getEventById(eventId)
 
     if(towerEvent.isCanceled == true){
       throw new Forbidden(`${eventId} has been cancelled. You cannot make changes to cancelled events.`)
+    }
+
+    if(towerEvent.creatorId != userInfo){
+      throw new Forbidden('You cannot edit an event that you did not create.')
     }
 
     towerEvent.name = eventData.name || towerEvent.name
