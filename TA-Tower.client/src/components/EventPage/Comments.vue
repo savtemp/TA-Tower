@@ -48,12 +48,14 @@ export default {
 <style scoped>
 .avatar {
   border-radius: 50%;
+  box-shadow: 2px 2px 5px black;
 }
 
 .commentBg {
   background-color: white;
   color: black;
   border-radius: 5px;
+  box-shadow: 3px 3px 5px black;
 }
 
 .isAttending {

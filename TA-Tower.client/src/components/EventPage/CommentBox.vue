@@ -7,7 +7,7 @@
     <div class="col-11 mx-auto mt-4">
       <h5 class="text-end textColorGreen">Join the conversation</h5>
     </div>
-    <textarea name="" id="" class="col-11  mx-auto" rows="5" placeholder="Tell the people..."></textarea>
+    <textarea name="" id="" class="col-11 mx-auto" rows="5" placeholder="Tell the people..."></textarea>
     <div class="col-11 text-end mx-auto mt-2">
       <button class="btn btn-outline-dark postButton">Post Comment</button>
     </div>
@@ -54,5 +54,11 @@ export default {
 .postButton {
   background-color: #79E6AB;
   color: black;
+  box-shadow: 2px 2px 5px black;
+}
+
+textarea {
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px;
 }
 </style>
