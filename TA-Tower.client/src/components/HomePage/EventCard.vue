@@ -1,9 +1,9 @@
 <template>
 
   <div @click="routeToEventPage()" :style="{ backgroundImage: `url(${event.coverImg})` }" class="test text-center row">
-    <div class="col-12 fillBox">
+    <div v-if="event.isCanceled == false && event.capacity > 0" class="col-12 fillBox">
     </div>
-    <div class="col-12 autoHeight">
+    <div v-if="event.isCanceled == false && event.capacity > 0" class="col-12 autoHeight">
       <div class="row">
         <h5 class="col-12">{{ event.name }}</h5>
         <div class="col-12">{{ event.location }}</div>
@@ -11,7 +11,36 @@
         <div class="col-12 text-end"><span class="green">{{ event.capacity }}</span> spots left</div>
       </div>
     </div>
+    <div v-if="event.isCanceled == true" class="col-12 autoHeightCanceled">
+      <div class="row fillBox">
+        <div class="col-12 ">
+          <img class="img-fluid cancelled" src="src/assets/img/Cancelled.png" alt="" srcset="">
+        </div>
+      </div>
+      <div class="row autoHeight">
+        <h5 class="col-12">{{ event.name }}</h5>
+        <div class="col-12">{{ event.location }}</div>
+        <div class="col-12"><i class="mdi mdi-calendar"></i>{{ new Date(event.startDate).toLocaleDateString() }}
+        </div>
+        <div class="col-12 text-end"><span class="green">{{ event.capacity }}</span> spots left</div>
+      </div>
+    </div>
+    <div v-if="event.capacity == 0" class="col-12 autoHeightCanceled">
+      <div class="row fillBox">
+        <div class="col-12 ">
+          <img class="img-fluid soldOut" src="src/assets/img/Sold_Out.png" alt="" srcset="">
+        </div>
+      </div>
+      <div class="row autoHeight">
+        <h5 class="col-12">{{ event.name }}</h5>
+        <div class="col-12">{{ event.location }}</div>
+        <div class="col-12"><i class="mdi mdi-calendar"></i>{{ new Date(event.startDate).toLocaleDateString() }}
+        </div>
+        <div class="col-12 text-end"><span class="red">{{ event.capacity }}</span> spots left</div>
+      </div>
+    </div>
   </div>
+
 
 </template>
 
@@ -76,7 +105,39 @@ export default {
   text-shadow: 2px 1px 2px black;
 }
 
+.autoHeightCanceled {
+  height: 100%;
+  text-align: start;
+  background: rgba(255, 255, 255, 0.29);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.6px);
+  -webkit-backdrop-filter: blur(7.6px);
+  color: white;
+  text-shadow: 2px 1px 2px black;
+  position: static;
+}
+
 .green {
   color: #56c7fb;
+}
+
+.red {
+  color: #fb5656;
+}
+
+.cancelled {
+  z-index: 100;
+  position: absolute;
+  height: 75%;
+  width: 90%;
+  top: 10%;
+}
+
+.soldOut {
+  z-index: 100;
+  position: absolute;
+  height: 75%;
+  width: 90%;
+  top: 10%;
 }
 </style>
