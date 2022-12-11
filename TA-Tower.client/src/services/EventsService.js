@@ -38,6 +38,18 @@ class EventsService {
     logger.log("[EVENT COMMENTS]", res.data);
     AppState.eventComments = res.data;
   }
+
+  async getEventsByAccountId(accountId) {
+    const res = await api.get("api/events");
+    logger.log("[MY ID]", accountId);
+    let events = res.data.filter((event) => event.creatorId != accountId);
+
+    logger.log(events);
+    AppState.yourEvents = res.data.filter(
+      (event) => event.creatorId != accountId
+    );
+    AppState.yourEvents = AppState.yourEvents;
+  }
 }
 
 export const eventsService = new EventsService();

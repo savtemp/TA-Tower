@@ -41,11 +41,13 @@
     </div>
   </div>
 
-
 </template>
 
 <script>
+import { computed } from "vue"
 import { useRouter } from "vue-router"
+import { AppState } from "../../AppState"
+import { router } from "../../router"
 import Pop from "../../utils/Pop"
 
 
@@ -61,7 +63,9 @@ export default {
     const router = useRouter()
 
 
+
     return {
+      account: computed(() => AppState.account),
       routeToEventPage() {
         try {
           console.log('[EVENT PROPS]', props.event.id)
@@ -74,17 +78,17 @@ export default {
         }
       }
     }
-  },
+  }
 }
 </script>
 
-<style scoped>
+<style>
 .test {
   background-size: cover;
   background-repeat: no-repeat;
   height: 30Vh;
   width: auto;
-  margin-top: 5vh;
+
   margin-left: .1px;
   margin-right: .1px;
   border-radius: 3%;

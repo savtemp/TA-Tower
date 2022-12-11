@@ -9,4 +9,6 @@ export const AppState = reactive({
   activeEvent: null,
   ticketHolders: null,
   eventComments: null,
+  yourEvents: [],
+  myTickets: [],
 });
