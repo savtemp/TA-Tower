@@ -1,14 +1,14 @@
 <template>
-  <div v-if="event">
+  <div v-if="event" class="mt-5">
     <div :style="{ backgroundImage: `url(${event.coverImg})` }" class="row rowHeight mx-auto">
       <div class="col-12 text-light autoHeight">
         <div class="row">
-          <div v-if="event.creatorId == account.id" class="col-4">
+          <div class="col-4">
             <img class="img-fluid my-4" :src="event.coverImg" alt="" srcset="">
           </div>
           <div class="col-8">
-            <div class="row">
-              <div class="col-12 text-end">
+            <div class="row headerHeight">
+              <div v-if="event.creatorId == account.id" class="col-12 text-end">
                 <button class="btn"><i class="mdi mdi-dots-horizontal"></i></button>
               </div>
               <div class="col-6 text-start">
@@ -28,14 +28,14 @@
                 }}</span>
               </div>
             </div>
-            <div class="row">
+            <div class="row bodyHeight">
               <div class="col-12 mt-5">
                 <p>{{ event.description }}</p>
               </div>
             </div>
             <div class="row fillerHeight">
             </div>
-            <div class="row">
+            <div class="row footerHeight">
               <div class="col-6 text-start">
                 <h6><span class="blue">{{ event.capacity }}</span> tickets left.</h6>
               </div>
@@ -86,7 +86,7 @@ export default {
 }
 
 .autoHeight {
-  background: rgba(107, 91, 176, 0.29);
+  background: rgba(59, 50, 97, 0.29);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(7.6px);
   -webkit-backdrop-filter: blur(7.6px);
@@ -94,8 +94,21 @@ export default {
   text-shadow: 2px 1px 2px black;
 }
 
+
+.headerHeight {
+  height: 10%;
+}
+
+.bodyHeight {
+  height: 50%
+}
+
 .fillerHeight {
-  height: 35%;
+  height: 25%;
+}
+
+.footerHeight {
+  height: 15%;
 }
 
 .blue {

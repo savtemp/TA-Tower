@@ -26,6 +26,18 @@ class EventsService {
     logger.log("[EVENT BY ID]", res.data);
     AppState.activeEvent = res.data;
   }
+
+  async getTicketHolders(eventId) {
+    const res = await api.get(`api/events/${eventId}/tickets`);
+    logger.log("[TICKET HOLDERS]", res.data);
+    AppState.ticketHolders = res.data;
+  }
+
+  async getEventComments(eventId) {
+    const res = await api.get(`api/events/${eventId}/comments`);
+    logger.log("[EVENT COMMENTS]", res.data);
+    AppState.eventComments = res.data;
+  }
 }
 
 export const eventsService = new EventsService();
