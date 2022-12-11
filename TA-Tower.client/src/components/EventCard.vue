@@ -1,6 +1,6 @@
 <template>
 
-  <div :style="{ backgroundImage: `url(${event.coverImg})` }" class="test text-center row">
+  <div @click="routeToEventPage()" :style="{ backgroundImage: `url(${event.coverImg})` }" class="test text-center row">
     <div class="col-12 fillBox">
     </div>
     <div class="col-12 autoHeight">
@@ -16,6 +16,9 @@
 </template>
 
 <script>
+import { useRouter } from "vue-router"
+import Pop from "../utils/Pop"
+
 
 export default {
   props: {
@@ -25,11 +28,23 @@ export default {
   },
 
 
-  setup() {
+  setup(props) {
+    const router = useRouter()
 
 
-
-    return {}
+    return {
+      routeToEventPage() {
+        try {
+          console.log('[EVENT PROPS]', props.event.id)
+          const eventId = props.event.id
+          router.push({ name: 'Event', params: { id: eventId } })
+        } catch (error) {
+          console.error(error)
+          // @ts-ignore 
+          Pop.error(('[ERROR]'), error.message)
+        }
+      }
+    }
   },
 }
 </script>

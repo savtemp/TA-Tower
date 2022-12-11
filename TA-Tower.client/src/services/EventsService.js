@@ -20,6 +20,12 @@ class EventsService {
       AppState.events = filter;
     }
   }
+
+  async getEventById(eventId) {
+    const res = await api.get(`api/events/${eventId}`);
+    logger.log("[EVENT BY ID]", res.data);
+    AppState.activeEvent = res.data;
+  }
 }
 
 export const eventsService = new EventsService();
