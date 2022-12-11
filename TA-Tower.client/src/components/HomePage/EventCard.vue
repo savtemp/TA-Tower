@@ -17,7 +17,7 @@
 
 <script>
 import { useRouter } from "vue-router"
-import Pop from "../utils/Pop"
+import Pop from "../../utils/Pop"
 
 
 export default {
@@ -49,7 +49,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .test {
   background-size: cover;
   background-repeat: no-repeat;

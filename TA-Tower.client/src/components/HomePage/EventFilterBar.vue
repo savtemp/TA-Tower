@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import { eventsService } from "../services/EventsService"
-import { logger } from "../utils/Logger"
+import { eventsService } from "../../services/EventsService"
+import { logger } from "../../utils/Logger"
 
 
 export default {

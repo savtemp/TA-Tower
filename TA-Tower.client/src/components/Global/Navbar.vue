@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navBarColor  px-3">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center mt-3">
-        <img alt="logo" src="../assets/img/TowerLogo.png" height="45" />
+        <img alt="logo" src="src/assets/img/TowerLogo.png" height="45" />
       </div>
     </router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import Login from './Login.vue'
+import Login from '../Global/Login.vue'
 export default {
   setup() {
     return {}
