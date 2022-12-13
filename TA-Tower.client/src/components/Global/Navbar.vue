@@ -1,10 +1,10 @@
 <template>
-  <nav class="navbar navbar-expand-lg navBarColor  px-3">
-    <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
+  <nav class="navbar navbar-expand-sm px-3">
+    <!-- <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center mt-3">
         <img alt="logo" src="src/assets/img/TowerLogo.png" height="45" />
       </div>
-    </router-link>
+    </router-link> -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
       aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -17,8 +17,14 @@
           </router-link>
         </li> -->
       </ul>
-      <!-- LOGIN COMPONENT HERE -->
-      <Login />
+      <div class="d-flex flex-column top-gradient">
+        <!-- LOGIN COMPONENT HERE -->
+        <Login />
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" title="Create Event">
+          <i class="mdi mdi-plus"></i>
+        </button>
+      </div>
     </div>
   </nav>
 </template>
@@ -56,5 +62,9 @@ a:hover {
 
 .navBarColor {
   background-color: #2A2D3A;
+}
+
+.top-gradient{
+  background-image: #474C61;
 }
 </style>

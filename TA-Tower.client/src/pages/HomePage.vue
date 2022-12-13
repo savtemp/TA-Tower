@@ -14,7 +14,7 @@
     </div>
   </div>
 
-
+<EventForm />
 </template>
 
 <script>
@@ -24,6 +24,7 @@ import { AppState } from "../AppState";
 import EventBanner from "../components/HomePage/EventBanner.vue";
 import EventCard from "../components/HomePage/EventCard.vue";
 import EventFilterBar from "../components/HomePage/EventFilterBar.vue";
+import EventForm from "../components/HomePage/EventForm.vue";
 import { eventsService } from "../services/EventsService";
 import Pop from "../utils/Pop";
 
@@ -46,7 +47,7 @@ export default {
       events: computed(() => AppState.events),
     };
   },
-  components: { EventCard, EventFilterBar, EventBanner }
+  components: { EventCard, EventFilterBar, EventBanner, EventForm }
 }
 </script>
 

@@ -50,6 +50,11 @@ class EventsService {
     );
     AppState.yourEvents = AppState.yourEvents;
   }
+
+  async createEvent(eventData){
+    const res = await api.post(`api/event`, eventData)
+    logger.log('[CREATING AN EVENT]', res.data)
+  }
 }
 
 export const eventsService = new EventsService();
