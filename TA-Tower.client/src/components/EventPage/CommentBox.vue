@@ -7,10 +7,13 @@
     <div class="col-11 mx-auto mt-4">
       <h5 class="text-end textColorGreen">Join the conversation</h5>
     </div>
-    <textarea name="" id="" class="col-11 mx-auto" rows="5" placeholder="Tell the people..."></textarea>
+    <div class="col-11 mx-auto mt-4" v-if="account.id">
+      <CommentForm />
+    </div>
+    <!-- <textarea name="" id="" class="col-11 mx-auto" rows="5" placeholder="Tell the people..."></textarea>
     <div class="col-11 text-end mx-auto mt-2">
       <button class="btn btn-outline-dark postButton">Post Comment</button>
-    </div>
+    </div> -->
     <div v-for="c in comments" class="row">
       <Comments :comment="c" />
     </div>
@@ -21,16 +24,18 @@
 <script>
 import { computed } from "vue";
 import { AppState } from "../../AppState";
+import CommentForm from "./CommentForm.vue";
 import Comments from "./Comments.vue";
 
 
 export default {
   setup() {
     return {
-      comments: computed(() => AppState.eventComments)
+      comments: computed(() => AppState.eventComments),
+      account: computed(() => AppState.account)
     };
   },
-  components: { Comments }
+  components: { Comments, CommentForm }
 }
 </script>
 
